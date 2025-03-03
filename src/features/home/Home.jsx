@@ -8,6 +8,8 @@ import {
   selectSubreddits,
   setSearchTerm
 } from '../../store/redditSlice';
+import Header from '../header/Header';
+import Subreddits from '../Subreddits/Subreddits';
 //import './Home.css';
 
 const Home = () => {
@@ -56,9 +58,6 @@ const Home = () => {
     <>
       {posts.map((post) => (
         <p key={post.id}>{post.title}</p>
-      ))}
-      {subreddits.map(subreddit => (
-        <button key = {subreddit.id} onClick={() => dispatch(fetchPosts(subreddit.url))}>{subreddit.name}</button>
       ))}
     </>
   ); 
