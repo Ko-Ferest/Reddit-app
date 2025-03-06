@@ -8,8 +8,8 @@ import {
   selectSubreddits,
   setSearchTerm
 } from '../../store/redditSlice';
-import Header from '../header/Header';
 import Subreddits from '../Subreddits/Subreddits';
+import { Link } from 'react-router-dom';
 //import './Home.css';
 
 const Home = () => {
@@ -57,8 +57,9 @@ const Home = () => {
   return (
     <>
       {posts.map((post) => (
-        <p key={post.id}>{post.title}</p>
+        <Link key={post.id} to={`/${post.id}`} >{post.title}</Link>
       ))}
+      <Subreddits />
     </>
   ); 
 };
