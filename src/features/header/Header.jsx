@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import './Header.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { setSearchTerm } from '../../store/redditSlice';
-import SubredditsDropdown from '../Subreddits/SubredditsDropdown';
+import React, { useState, useEffect } from "react";
+import "./Header.css";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchTerm } from "../../store/redditSlice";
+import SubredditsDropdown from "../Subreddits/SubredditsDropdown";
 
 const Header = () => {
-  const [searchTermLocal, setSearchTermLocal] = useState('');
+  const [searchTermLocal, setSearchTermLocal] = useState("");
   const searchTerm = useSelector((state) => state.reddit.searchTerm);
   const dispatch = useDispatch();
 
@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header className="header">
       <form className="search" onSubmit={onSearchTermSubmit}>
         <input
           type="text"
@@ -33,7 +33,7 @@ const Header = () => {
           aria-label="Search posts"
         />
         <button type="submit" onClick={onSearchTermSubmit} aria-label="Search">
-            Search
+          Search
         </button>
       </form>
       <SubredditsDropdown />

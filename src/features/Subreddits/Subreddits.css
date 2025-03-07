@@ -1,0 +1,22 @@
+.subreddits-sidebar {
+  display: none;
+}
+
+.subreddits-sidebar button {
+  cursor: pointer;
+  display: inline-flex;
+  font-size: large;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid;
+  border-radius: 4px;
+}
+
+@media screen and (min-width: 800px) {
+  .subreddits-sidebar {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+}
