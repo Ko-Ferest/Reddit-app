@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { fetchPost } from "../../store/postSlice";
+import Loading from "../common/Loading";
 import "./Post.css";
 
 function Post() {
@@ -16,15 +17,20 @@ function Post() {
   }, []);
 
   if (isLoading) {
-    return <p>Loading</p>;
+    return <Loading />;
   }
 
   return (
     <>
+      <header className="post-header">
+        <Link to="/">Home</Link>
+      </header>
       <article className="post card">
         <h2>{post.title}</h2>
         <div className="post-body">
-          <img src={post.url_overridden_by_dest} />
+          {post?.url_overridden_by_dest?.endsWith(".jpeg") && (
+            <img src={post.url_overridden_by_dest} />
+          )}
           <p>{post.selftext}</p>
         </div>
       </article>

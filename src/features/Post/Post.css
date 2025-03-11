@@ -1,3 +1,31 @@
+.post-header {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: lightgray;
+  position: fixed;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.post-header a {
+  font-size: large;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.post-header a::before {
+  content: "\276E";
+  margin-right: 10px;
+}
+
+.post {
+  margin-top: -60px;
+}
+
 .post h2 {
   margin-top: 0;
 }
@@ -22,6 +50,7 @@
   .post-body img {
     float: left;
     margin-right: 15px;
+    width: 300px;
   }
 
   .post-body p {

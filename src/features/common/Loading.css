@@ -1,0 +1,10 @@
+.loading-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 250px);
+}
+
+.loading-wrapper p {
+  font-size: 35px;
+}

@@ -1,13 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./features/home/Home";
-import "./App.css";
-import Header from "./features/header/Header";
+//import Header from "./features/header/Header";
 import Post from "./features/Post/Post";
+import "./App.css";
 
 function App() {
   return (
     <div className="container">
-      <Header />
       <main className="main">
         <Routes>
           <Route path="/" element={<Home />}></Route>
