@@ -20,6 +20,17 @@ function Post() {
     return <Loading />;
   }
 
+  if (error) {
+    return (
+      <div className="error">
+        <h2>Failed to load post.</h2>
+        <button type="button" onClick={() => dispatch(fetchPost(id))}>
+          Try again
+        </button>
+      </div>
+    );
+  }
+
   return (
     <>
       <header className="post-header">

@@ -39,18 +39,6 @@ const redditSlice = createSlice({
       state.selectedSubreddit = action.payload;
       state.searchTerm = "";
     },
-    // startGetComments(state, action) {
-    //   state.posts[action.payload].loadingComments = true;
-    //   state.posts[action.payload].error = false;
-    // },
-    // getCommentsSuccess(state, action) {
-    //   state.posts[action.payload.index].loadingComments = false;
-    //   state.posts[action.payload.index].comments = action.payload.comments;
-    // },
-    // getCommentsFailed(state, action) {
-    //   state.posts[action.payload].loadingComments = false;
-    //   state.posts[action.payload].error = true;
-    // },
   },
 });
 
@@ -62,9 +50,6 @@ export const {
   setSearchTerm,
   setSelectedSubreddit,
   setSubreddits,
-  //   getCommentsFailed,
-  //   getCommentsSuccess,
-  //   startGetComments,
 } = redditSlice.actions;
 
 export default redditSlice.reducer;
@@ -102,16 +87,6 @@ export const fetchPosts = (subreddit) => async (dispatch) => {
     dispatch(getPostsFailed());
   }
 };
-
-// export const fetchComments = (index, permalink) => async (dispatch) => {
-//   try {
-//     dispatch(startGetComments(index));
-//     const comments = await getPostComments(permalink);
-//     dispatch(getCommentsSuccess({ index, comments }));
-//   } catch (error) {
-//     dispatch(getCommentsFailed(index));
-//   }
-// };
 
 const selectPosts = (state) => state.reddit.posts;
 const selectSearchTerm = (state) => state.reddit.searchTerm;
