@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchPosts,
   selectFilteredPosts,
-  selectSubreddits,
   setSearchTerm,
 } from "../../store/redditSlice";
 import Subreddits from "../Subreddits/Subreddits";
@@ -16,7 +15,6 @@ const Home = () => {
   const reddit = useSelector((state) => state.reddit);
   const { isLoading, error, searchTerm } = reddit;
   const posts = useSelector(selectFilteredPosts);
-  const subreddits = useSelector(selectSubreddits);
   const dispatch = useDispatch();
 
   useEffect(() => {
